@@ -1,0 +1,50 @@
+M=int(input("Введите число - количество строк матрицы: "))
+N=int(input("Введите число - количество чисел в строке матрицы: "))
+import random
+lstM=[]
+while len(lstM)<=M-1:
+        lstN=[]
+        while len(lstN)<=N-1:
+                lstN.append(random.randint(1, 10))
+        lstM.append(lstN)
+print(lstM)
+k=0
+mi=0
+lstM.reverse()
+print("Список в обратном порядке: ", lstM)
+for m in lstM:
+        lstX=[]
+        for n in list(m):
+                lstX.append(list(m).count(n))
+                if max(lstX) >= k:
+                        k=max(lstX)
+                        mit=lstM.index(m)
+                        if mi<mit:
+                                mi=mit
+                
+print(int(M-mi))
+print("k=", k)
+lstM.reverse()
+print(lstM)
+lst2=[]
+if M==N:
+        i=0
+        for m in lstM:
+                lstY=[]
+                lstN=list(m)
+                for n in lstN:
+                        lstY.append(lstN[0:i])
+                        break
+                lst2.append(lstY)
+                i+=1
+print(lst2)
+def multiple(p):
+        answer=1
+        for u in p:
+                answer *=u
+        return answer
+lst3=[]
+for j in lst2:
+        for p in j:
+                lst3.append(multiple(p))
+print(multiple(lst3))
