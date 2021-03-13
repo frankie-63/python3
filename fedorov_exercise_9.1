@@ -1,0 +1,17 @@
+import math
+def p(a, b, c):
+        return (a+b+c)/2
+def geron(a, b, c):
+	return math.sqrt(p(a, b, c)*(p(a, b, c)-a)*(p(a, b, c)-b)*(p(a, b, c)-c))
+if __name__ == "__main__":
+	print("Вычисление площади треугольника с помощью формулы Герона")
+	value = input("Введите длину 1-й стороны: ")
+	if len(value) > 0:
+		a = float(value)
+	value = input("Введите длину 2-й стороны: ")
+	if len(value) > 0:
+		b = float(value)
+	value = input("Введите длину 3-й стороны: ")
+	if len(value) > 0:
+		c = float(value)
+	print("Площадь: ", geron(a, b, c))
