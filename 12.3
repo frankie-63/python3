@@ -1,0 +1,13 @@
+import random
+N1 = random.randint(-100, 100)
+N2 = random.randint(-100, 100)
+if N2 > N1:
+    lst = [i for i in range(N1, N2)]
+else:
+    lst = [i for i in range(N2, N1)]
+print('список по порядку', lst)
+midpoint = int(len(lst)/2)
+mid = lst[midpoint]
+lst1 = list(range(mid, lst[-1], 1))
+lst2 = list(range(lst[0], mid, 1))
+print('меняем местами первую и вторую половину списка', lst1 + lst2)
