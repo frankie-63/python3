@@ -1,0 +1,23 @@
+strP = str(input("Введите строку: "))
+lst= list(strP)
+str1=str(input("Введите букву: "))
+str2=str1.capitalize()
+
+def g(myList, element):
+    return [i+1 for i, x in enumerate(myList) if x == element]
+def h(myList, element):
+    return [i for i, x in enumerate(myList) if x == element]
+dxt=g(lst, ' ')
+ext=h(lst, str1) + h(lst, str2)
+dst=[0] + dxt
+c = []
+for i in dst:
+    for j in ext:
+        if i == j:
+            c.append(i)
+            break
+
+for n in sorted(c, reverse=True):
+    del lst[n]
+strN=''.join(lst)
+print(strN)
