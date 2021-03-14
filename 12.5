@@ -1,0 +1,31 @@
+print("Программа определяет сумму квадратов нечетных цифр в числе")
+# добавляем функцию проверки введенного значения
+# на принадлежность к целым числам:
+def is_int(intx):
+    try:
+        int(intx)
+        return True
+    except ValueError:
+        return False
+    
+# добавляем функцию проверки принадлежности i-той цифры
+# из введенного числа к четным или нечетным:
+def is_even(i):
+    if i % 2 == 0:
+        return True
+    else:
+        return False
+
+while True:
+    intx = input("Введите целое число: ")
+    if any(intx)==True and is_int(intx)==True:
+        total=0
+        lst = list(intx)
+        for i in lst:
+            if is_even(int(i))==True:
+                continue # инструкция перехода к следующему шагу цикла
+            total=total+int(i)**2
+        print(total)
+        break # инструкция выхода из цикла
+    else:
+        print("Ошибка. Введите целое число!")
