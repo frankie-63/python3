@@ -1,0 +1,32 @@
+import random
+rint = random.randint(1, 100)
+print("Игра 'Угадай число от 1 до 100'")
+# добавляем функцию проверки введенного значения
+# на принадлежность к целым числам:
+def is_int(str):
+    try:
+        int(str)
+        return True
+    except ValueError:
+        return False
+while True: # начало цикла
+    uint = input("Введите число или Выход для выхода: ")
+    if any(uint)==True and is_int(uint)==True:
+        # проверяем, что введено непустое значение, и это значение - целое число
+        if int(uint) in list(range(1, 101, 1)):
+            # проверяем, что введено число в диапазоне от 1 до 100
+            if int(uint) == rint:
+                print("Ты угадал!")
+                break
+            else:
+                if int(uint) > rint:
+                    print("Твое число больше загаданного")
+                elif int(uint) < rint:
+                    print("Твое число меньше загаданного")
+        else:
+                print('Введите число от 1 до 100!')
+    elif uint == 'Выход':
+        print("Выход из игры! До встречи!")
+        break
+    else:
+        print("Введено некорректное значение")
