@@ -1,0 +1,17 @@
+def is_int(intx):
+    try:
+        int(intx)
+        return True
+    except ValueError:
+        return False
+total=0
+while True:
+    intx = input("Введите число или стоп для выхода: ")
+    if intx == "стоп":
+        print(total, "- сумма всех чисел, которые вы ввели")
+        break # инструкция выхода из цикла
+    elif is_int(intx)==True:
+        total=total+int(intx)
+        continue
+    else:
+        print("Что это?!")
