@@ -1,0 +1,18 @@
+text=str(input("Введите текст: "))
+lst=list(text)
+def is_int(i):
+    try:
+        int(i)
+        return True
+    except ValueError:
+        return False
+nlst=[]
+for i in lst:
+    if is_int(i)==True:
+        nlst.append(i)
+    else:
+        continue
+dlst=[int(d) for d in nlst]
+print("В введенном тексте встречаются следующие цифры: ", dlst)
+print("Всего в тексте", len(dlst), "цифр")
+print("Сумма всех цифр, встречающихся в тексте: ", sum(dlst))
