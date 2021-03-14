@@ -1,0 +1,21 @@
+text=str(input("Введите текст: "))
+lst=list(text)
+def h(myList, element):
+    return [i for i, x in enumerate(myList) if x==element]
+for n in lst:
+    if n=='.' or n==',' or n=='(' or n==')':
+        lst.remove(n)
+#print(lst)
+hlst=[0]+h(lst, ' ')
+#print(hlst)
+nlst=[]
+for j in hlst:
+    k=hlst.index(j)
+    while k+2<=len(hlst):
+        m=hlst[int(k):int(k+2)]
+        nlst.append(m[1]-m[0])
+        break
+#print(nlst)
+maxnlst=max(nlst)
+print("Первое самое длинное слово в строке", (hlst.index(hlst[int(nlst.index(maxnlst))])+1), "по счету")
+print("В нем", int(maxnlst-1), "букв")
